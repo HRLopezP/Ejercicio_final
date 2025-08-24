@@ -4,22 +4,19 @@ let que = ["las llaves", "el informe", "el documento", "la presentación", "el d
 let cuando = ["ayer en la noche.", "el fin de semana pasado.", "justo antes de salir.", "hace un momento.", "en la madrugada."];
 
 
-function excusa(quien, verbo, que, cuando) {
-  
-  const aleatorio= Math.floor(Math.random() * 5);
-  
-  let quien_salida = quien[aleatorio];
-  let verbo_salida= verbo[aleatorio];
-  let que_salida = que[aleatorio];
-  let cuando_salida = cuando[aleatorio];
+function excusa() {
+  let quienRandom = quien[Math.floor(Math.random()*quien.length)];
+  let verboRandom= verbo[Math.floor(Math.random() * verbo.length)];
+  let queRandom = que[Math.floor(Math.random() * que.length)];
+  let cuandoRandom = cuando[Math.floor(Math.random() * cuando.length)];
 
-  const oracion = quien_salida  + " " + verbo_salida + " " + que_salida + " " + cuando_salida;
+  let oracion = `${quienRandom} ${verboRandom} ${queRandom} ${cuandoRandom}`;
 
   return oracion;
 }
 
-const excusa_completa = excusa(quien, verbo, que, cuando);
-console.log(excusa_completa);
+const excusaCompleta = excusa(quien, verbo, que, cuando);
+console.log(excusaCompleta);
 
 document.getElementById("excusa").innerHTML = 
-  excusa_completa;
+  excusaCompleta;
